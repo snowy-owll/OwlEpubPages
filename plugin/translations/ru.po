@@ -1,0 +1,249 @@
+# Russian translation of Owl EPUB Pages.
+msgid ""
+msgstr ""
+"Project-Id-Version: Owl EPUB Pages\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Page numbers"
+msgstr "Номера страниц"
+
+msgid "Add page numbers to the selected EPUB books"
+msgstr "Добавить номера страниц в выбранные книги EPUB"
+
+msgid "Add page numbers"
+msgstr "Добавить номера страниц"
+
+msgid "Check page numbers"
+msgstr "Проверить номера страниц"
+
+msgid "Restore the original EPUB"
+msgstr "Восстановить исходный EPUB"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "No books selected"
+msgstr "Книги не выбраны"
+
+msgid "Select one or more books in the library first."
+msgstr "Сначала выберите одну или несколько книг в библиотеке."
+
+msgid "No EPUB books"
+msgstr "Нет книг EPUB"
+
+msgid "None of the selected books has the EPUB format."
+msgstr "Ни у одной из выбранных книг нет формата EPUB."
+
+msgid "%d book"
+msgid_plural "%d books"
+msgstr[0] "%d книга"
+msgstr[1] "%d книги"
+msgstr[2] "%d книг"
+
+msgid "Check page numbers: %s"
+msgstr "Проверка номеров страниц: %s"
+
+msgid "Add page numbers: %s"
+msgstr "Добавление номеров страниц: %s"
+
+msgid "Page numbers failed"
+msgstr "Ошибка при обработке номеров страниц"
+
+msgid "Library changed"
+msgstr "Библиотека сменилась"
+
+msgid "The library was switched while page numbers were being added. Nothing was changed."
+msgstr "Во время добавления номеров страниц была открыта другая библиотека. Ничего не изменено."
+
+msgid "Nothing to restore"
+msgstr "Нечего восстанавливать"
+
+msgid "None of the selected books has an ORIGINAL_EPUB format."
+msgstr "Ни у одной из выбранных книг нет формата ORIGINAL_EPUB."
+
+msgid "Books with ORIGINAL_EPUB: %d. Replace their EPUB with ORIGINAL_EPUB? Page numbers added by this plugin will be removed."
+msgstr "Книг с ORIGINAL_EPUB: %d. Заменить их EPUB на ORIGINAL_EPUB? Номера страниц, добавленные этим плагином, будут удалены."
+
+msgid "The original EPUB was restored. Books: %d."
+msgstr "Исходный EPUB восстановлен. Книг: %d."
+
+msgid "All books"
+msgstr "Все книги"
+
+msgid "Real print pages if the book has them, otherwise estimated pages"
+msgstr "Настоящие печатные страницы, если они есть в книге, иначе расчётные"
+
+msgid "Only real print pages"
+msgstr "Только настоящие печатные страницы"
+
+msgid "Always estimated pages"
+msgstr "Всегда расчётные страницы"
+
+msgid "Page numbers:"
+msgstr "Номера страниц:"
+
+msgid "Replace page numbers the book already has"
+msgstr "Заменять номера страниц, которые уже есть в книге"
+
+msgid "Keep the original book as ORIGINAL_EPUB"
+msgstr "Сохранять исходную книгу как ORIGINAL_EPUB"
+
+msgid "The unchanged EPUB is saved once as the ORIGINAL_EPUB format, so that it can be restored with \"Restore the original EPUB\"."
+msgstr "Неизменённый EPUB один раз сохраняется как формат ORIGINAL_EPUB, его можно вернуть командой «Восстановить исходный EPUB»."
+
+msgid "Estimated pages (books without print page numbers)"
+msgstr "Расчётные страницы (книги без печатных номеров страниц)"
+
+msgid "Characters on a full page, spaces included."
+msgstr "Символов на полной странице, включая пробелы."
+
+msgid "Characters per page:"
+msgstr "Символов на странице:"
+
+msgid "Paperback: about 1500, trade paperback: about 2000, hardcover: 2300-2600. Smaller pages change more often while reading."
+msgstr "Карманная книга: около 1500, обычная мягкая обложка: около 2000, твёрдая обложка: 2300–2600. Чем меньше страница, тем чаще меняется номер при чтении."
+
+msgid "do not round paragraphs"
+msgstr "без округления абзацев"
+
+msgid "The end of a paragraph fills the rest of its line, as in a printed book. 0 counts plain characters."
+msgstr "Конец абзаца занимает строку до конца, как в печатной книге. 0 — считать просто символы."
+
+msgid "Characters per line:"
+msgstr "Символов в строке:"
+
+msgid "never"
+msgstr "никогда"
+
+msgid "A chapter whose last page would be filled less than this is squeezed onto the previous page, as typesetters do. Fewer page numbers are skipped when a chapter ends on Kindle."
+msgstr "Если последняя страница главы заполнена меньше указанного, её текст переносится на предыдущую страницу, как делают верстальщики. На Kindle реже пропускаются номера страниц в конце главы."
+
+msgid "Merge a short last page of a chapter:"
+msgstr "Присоединять короткую последнюю страницу главы:"
+
+msgid "Start every chapter on an odd page, adding a blank page if needed"
+msgstr "Начинать каждую главу с нечётной страницы, добавляя пустую при необходимости"
+
+msgid "HTML tags that always start a new page, separated by commas. Every chapter file and every CSS page break already starts a new page."
+msgstr "HTML-теги через запятую, с которых всегда начинается новая страница. Каждый файл главы и каждый разрыв страницы в CSS и так начинают новую страницу."
+
+msgid "Also start a new page at:"
+msgstr "Новая страница также с тегов:"
+
+msgid "Start of the main text (detected automatically)"
+msgstr "Начало основного текста (определяется автоматически)"
+
+msgid "Start of the book"
+msgstr "Начало книги"
+
+msgid "Page 1 is at:"
+msgstr "Страница 1:"
+
+msgid "Roman numerals (i, ii, iii)"
+msgstr "Римские цифры (i, ii, iii)"
+
+msgid "No page numbers"
+msgstr "Без номеров"
+
+msgid "Normal numbering"
+msgstr "Обычная нумерация"
+
+msgid "Pages before the main text:"
+msgstr "Страницы до основного текста:"
+
+msgid "High: the book has page numbers"
+msgstr "Высокая: в книге есть номера страниц"
+
+msgid "Likely: print page anchors without a page list"
+msgstr "Вероятно: якоря печатных страниц без списка страниц"
+
+msgid "Low: the book has no page list"
+msgstr "Низкая: в книге нет списка страниц"
+
+msgid "%d page"
+msgid_plural "%d pages"
+msgstr[0] "%d страница"
+msgstr[1] "%d страницы"
+msgstr[2] "%d страниц"
+
+msgid "none"
+msgstr "нет"
+
+msgid "pages %(first)s-%(last)s"
+msgstr "страницы %(first)s–%(last)s"
+
+msgid "Nothing to do"
+msgstr "Ничего делать не нужно"
+
+msgid "Add page numbers: real print pages"
+msgstr "Добавить номера страниц: настоящие печатные"
+
+msgid "Add page numbers: estimated pages"
+msgstr "Добавить номера страниц: расчётные"
+
+msgid "Not a valid EPUB file"
+msgstr "Файл не является корректным EPUB"
+
+msgid "The book is DRM-protected"
+msgstr "Книга защищена DRM"
+
+msgid "Skipped: the book already has page numbers"
+msgstr "Пропущено: в книге уже есть номера страниц"
+
+msgid "Skipped: the book has no print page numbers"
+msgstr "Пропущено: в книге нет печатных номеров страниц"
+
+msgid "The book has no table of contents file (NCX or nav)"
+msgstr "В книге нет файла оглавления (NCX или nav)"
+
+msgid "The start of the main text was not found"
+msgstr "Не найдено начало основного текста"
+
+msgid "No text to number"
+msgstr "Нет текста для нумерации"
+
+msgid "No EPUB format"
+msgstr "Нет формата EPUB"
+
+msgid "Error: %s"
+msgstr "Ошибка: %s"
+
+msgid "Real print pages: %(n)d (%(first)s-%(last)s)"
+msgstr "Настоящие печатные страницы: %(n)d (%(first)s–%(last)s)"
+
+msgid "Estimated pages: %(n)d (%(first)s-%(last)s)"
+msgstr "Расчётные страницы: %(n)d (%(first)s–%(last)s)"
+
+msgid "Page numbers check"
+msgstr "Проверка номеров страниц"
+
+msgid "How likely Kindle is to show page numbers for each book. A page list in the book always works; for the other books use \"Add page numbers\"."
+msgstr "Насколько вероятно, что Kindle покажет номера страниц. Список страниц в книге работает всегда; для остальных книг используйте «Добавить номера страниц»."
+
+msgid "Title"
+msgstr "Название"
+
+msgid "Kindle page numbers"
+msgstr "Страницы на Kindle"
+
+msgid "Page list"
+msgstr "Список страниц"
+
+msgid "Print page anchors"
+msgstr "Якоря печатных страниц"
+
+msgid "Recommendation"
+msgstr "Рекомендация"
+
+msgid "Page numbers added"
+msgstr "Номера страниц добавлены"
+
+msgid "Books with page numbers added: %(done)d of %(total)d."
+msgstr "Номера страниц добавлены в книги: %(done)d из %(total)d."
+
+msgid "Result"
+msgstr "Результат"

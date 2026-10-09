@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Owl EPUB Pages 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: action.py:20
+msgid "Page numbers"
+msgstr ""
+
+#: action.py:20
+msgid "Add page numbers to the selected EPUB books"
+msgstr ""
+
+#: action.py:29
+msgid "Add page numbers"
+msgstr ""
+
+#: action.py:31
+msgid "Check page numbers"
+msgstr ""
+
+#: action.py:33 action.py:141 action.py:149
+msgid "Restore the original EPUB"
+msgstr ""
+
+#: action.py:36
+msgid "Settings"
+msgstr ""
+
+#: action.py:46
+msgid "No books selected"
+msgstr ""
+
+#: action.py:47
+msgid "Select one or more books in the library first."
+msgstr ""
+
+#: action.py:78
+msgid "No EPUB books"
+msgstr ""
+
+#: action.py:79
+msgid "None of the selected books has the EPUB format."
+msgstr ""
+
+#: action.py:82
+msgid "%d book"
+msgid_plural "%d books"
+msgstr[0] ""
+msgstr[1] ""
+
+#: action.py:84
+msgid "Check page numbers: %s"
+msgstr ""
+
+#: action.py:86
+msgid "Add page numbers: %s"
+msgstr ""
+
+#: action.py:95
+msgid "Page numbers failed"
+msgstr ""
+
+#: action.py:107
+msgid "Library changed"
+msgstr ""
+
+#: action.py:108
+msgid "The library was switched while page numbers were being added. Nothing was changed."
+msgstr ""
+
+#: action.py:137
+msgid "Nothing to restore"
+msgstr ""
+
+#: action.py:138
+msgid "None of the selected books has an ORIGINAL_EPUB format."
+msgstr ""
+
+#: action.py:142
+msgid "Books with ORIGINAL_EPUB: %d. Replace their EPUB with ORIGINAL_EPUB? Page numbers added by this plugin will be removed."
+msgstr ""
+
+#: action.py:150
+msgid "The original EPUB was restored. Books: %d."
+msgstr ""
+
+#: config.py:62
+msgid "All books"
+msgstr ""
+
+#: config.py:65
+msgid "Real print pages if the book has them, otherwise estimated pages"
+msgstr ""
+
+#: config.py:66
+msgid "Only real print pages"
+msgstr ""
+
+#: config.py:67
+msgid "Always estimated pages"
+msgstr ""
+
+#: config.py:69
+msgid "Page numbers:"
+msgstr ""
+
+#: config.py:70
+msgid "Replace page numbers the book already has"
+msgstr ""
+
+#: config.py:73
+msgid "Keep the original book as ORIGINAL_EPUB"
+msgstr ""
+
+#: config.py:74
+msgid "The unchanged EPUB is saved once as the ORIGINAL_EPUB format, so that it can be restored with \"Restore the original EPUB\"."
+msgstr ""
+
+#: config.py:81
+msgid "Estimated pages (books without print page numbers)"
+msgstr ""
+
+#: config.py:84
+msgid "Characters on a full page, spaces included."
+msgstr ""
+
+#: config.py:85
+msgid "Characters per page:"
+msgstr ""
+
+#: config.py:86
+msgid "Paperback: about 1500, trade paperback: about 2000, hardcover: 2300-2600. Smaller pages change more often while reading."
+msgstr ""
+
+#: config.py:91
+msgid "do not round paragraphs"
+msgstr ""
+
+#: config.py:92
+msgid "The end of a paragraph fills the rest of its line, as in a printed book. 0 counts plain characters."
+msgstr ""
+
+#: config.py:95
+msgid "Characters per line:"
+msgstr ""
+
+#: config.py:97
+msgid "never"
+msgstr ""
+
+#: config.py:98
+msgid "A chapter whose last page would be filled less than this is squeezed onto the previous page, as typesetters do. Fewer page numbers are skipped when a chapter ends on Kindle."
+msgstr ""
+
+#: config.py:102
+msgid "Merge a short last page of a chapter:"
+msgstr ""
+
+#: config.py:103
+msgid "Start every chapter on an odd page, adding a blank page if needed"
+msgstr ""
+
+#: config.py:108
+msgid "HTML tags that always start a new page, separated by commas. Every chapter file and every CSS page break already starts a new page."
+msgstr ""
+
+#: config.py:111
+msgid "Also start a new page at:"
+msgstr ""
+
+#: config.py:113
+msgid "Start of the main text (detected automatically)"
+msgstr ""
+
+#: config.py:114
+msgid "Start of the book"
+msgstr ""
+
+#: config.py:116
+msgid "Page 1 is at:"
+msgstr ""
+
+#: config.py:118
+msgid "Roman numerals (i, ii, iii)"
+msgstr ""
+
+#: config.py:119
+msgid "No page numbers"
+msgstr ""
+
+#: config.py:120
+msgid "Normal numbering"
+msgstr ""
+
+#: config.py:122
+msgid "Pages before the main text:"
+msgstr ""
+
+#: dialogs.py:10
+msgid "High: the book has page numbers"
+msgstr ""
+
+#: dialogs.py:11
+msgid "Likely: print page anchors without a page list"
+msgstr ""
+
+#: dialogs.py:12
+msgid "Low: the book has no page list"
+msgstr ""
+
+#: dialogs.py:18
+msgid "%d page"
+msgid_plural "%d pages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: dialogs.py:19 dialogs.py:24
+msgid "none"
+msgstr ""
+
+#: dialogs.py:25
+msgid "pages %(first)s-%(last)s"
+msgstr ""
+
+#: dialogs.py:30
+msgid "Nothing to do"
+msgstr ""
+
+#: dialogs.py:32
+msgid "Add page numbers: real print pages"
+msgstr ""
+
+#: dialogs.py:33
+msgid "Add page numbers: estimated pages"
+msgstr ""
+
+#: dialogs.py:38
+msgid "Not a valid EPUB file"
+msgstr ""
+
+#: dialogs.py:39
+msgid "The book is DRM-protected"
+msgstr ""
+
+#: dialogs.py:40
+msgid "Skipped: the book already has page numbers"
+msgstr ""
+
+#: dialogs.py:41
+msgid "Skipped: the book has no print page numbers"
+msgstr ""
+
+#: dialogs.py:42
+msgid "The book has no table of contents file (NCX or nav)"
+msgstr ""
+
+#: dialogs.py:43
+msgid "The start of the main text was not found"
+msgstr ""
+
+#: dialogs.py:44
+msgid "No text to number"
+msgstr ""
+
+#: dialogs.py:45
+msgid "No EPUB format"
+msgstr ""
+
+#: dialogs.py:46
+msgid "Error: %s"
+msgstr ""
+
+#: dialogs.py:52
+msgid "Real print pages: %(n)d (%(first)s-%(last)s)"
+msgstr ""
+
+#: dialogs.py:53
+msgid "Estimated pages: %(n)d (%(first)s-%(last)s)"
+msgstr ""
+
+#: dialogs.py:103
+msgid "Page numbers check"
+msgstr ""
+
+#: dialogs.py:104
+msgid "How likely Kindle is to show page numbers for each book. A page list in the book always works; for the other books use \"Add page numbers\"."
+msgstr ""
+
+#: dialogs.py:106 dialogs.py:124
+msgid "Title"
+msgstr ""
+
+#: dialogs.py:106
+msgid "Kindle page numbers"
+msgstr ""
+
+#: dialogs.py:106
+msgid "Page list"
+msgstr ""
+
+#: dialogs.py:106
+msgid "Print page anchors"
+msgstr ""
+
+#: dialogs.py:107
+msgid "Recommendation"
+msgstr ""
+
+#: dialogs.py:122
+msgid "Page numbers added"
+msgstr ""
+
+#: dialogs.py:123
+msgid "Books with page numbers added: %(done)d of %(total)d."
+msgstr ""
+
+#: dialogs.py:124
+msgid "Result"
+msgstr ""
