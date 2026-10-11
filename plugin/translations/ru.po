@@ -125,6 +125,15 @@ msgstr "Если последняя страница главы заполнен
 msgid "Merge a short last page of a chapter:"
 msgstr "Присоединять короткую последнюю страницу главы:"
 
+msgid "heading text only"
+msgstr "только текст заголовка"
+
+msgid "Share of a page taken by a heading that opens a page, together with the space around it. The first page of a chapter then holds less text, as in printed books, where it is usually 20-30 %."
+msgstr "Доля страницы, которую занимает заголовок в начале страницы вместе с отступами вокруг него. На первой странице главы помещается меньше текста, как в печатных книгах, где это обычно 20–30 %."
+
+msgid "A chapter heading takes at least:"
+msgstr "Заголовок главы занимает не меньше:"
+
 msgid "Start every chapter on an odd page, adding a blank page if needed"
 msgstr "Начинать каждую главу с нечётной страницы, добавляя пустую при необходимости"
 

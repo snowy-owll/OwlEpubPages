@@ -13,6 +13,7 @@ prefs.defaults['keep_original'] = True
 prefs.defaults['chars_per_page'] = 2000
 prefs.defaults['chars_per_line'] = 60
 prefs.defaults['min_last_page'] = 0      # percent of a page
+prefs.defaults['chapter_sink'] = 0       # percent of a page
 prefs.defaults['recto'] = False
 prefs.defaults['break_on'] = ''
 prefs.defaults['page_one'] = 'auto'      # auto | book
@@ -28,6 +29,7 @@ def core_options():
         chars_per_page=prefs['chars_per_page'],
         chars_per_line=prefs['chars_per_line'],
         min_last_page=prefs['min_last_page'] / 100,
+        chapter_sink=prefs['chapter_sink'] / 100,
         recto=prefs['recto'],
         break_on=prefs['break_on'],
         body_start='auto' if prefs['page_one'] == 'auto' else None,
@@ -100,6 +102,13 @@ class ConfigWidget(QWidget):
             'previous page, as typesetters do. Fewer page numbers are skipped when a chapter '
             'ends on Kindle.'))
         form.addRow(_('Merge a short last page of a chapter:'), self.min_last_page)
+        self.chapter_sink = spin(0, 80, prefs['chapter_sink'], 5, ' %')
+        self.chapter_sink.setSpecialValueText(_('heading text only'))
+        self.chapter_sink.setToolTip(_(
+            'Share of a page taken by a heading that opens a page, together with the space '
+            'around it. The first page of a chapter then holds less text, as in printed '
+            'books, where it is usually 20-30 %.'))
+        form.addRow(_('A chapter heading takes at least:'), self.chapter_sink)
         self.recto = QCheckBox(_('Start every chapter on an odd page, adding a blank page if needed'))
         self.recto.setChecked(prefs['recto'])
         form.addRow(self.recto)
@@ -120,7 +129,8 @@ class ConfigWidget(QWidget):
             ('number', _('Normal numbering')),
         ], prefs['front'])
         form.addRow(_('Pages before the main text:'), self.front)
-        numbers = (self.chars_per_page, self.chars_per_line, self.min_last_page)
+        numbers = (self.chars_per_page, self.chars_per_line, self.min_last_page,
+                   self.chapter_sink)
         width = max(box.sizeHint().width() for box in numbers)
         for box in numbers + (self.break_on,):
             box.setFixedWidth(width)
@@ -134,6 +144,7 @@ class ConfigWidget(QWidget):
         prefs['chars_per_page'] = self.chars_per_page.value()
         prefs['chars_per_line'] = self.chars_per_line.value()
         prefs['min_last_page'] = self.min_last_page.value()
+        prefs['chapter_sink'] = self.chapter_sink.value()
         prefs['recto'] = self.recto.isChecked()
         prefs['break_on'] = self.break_on.text().strip()
         prefs['page_one'] = self.page_one.currentData()

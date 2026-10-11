@@ -167,6 +167,28 @@ class CoreTest(unittest.TestCase):
         merged, _ = self.run_process(src, chars_per_page=cpp, min_last_page=0.25)
         self.assertEqual(merged['pages'], plain['pages'] - 1)
 
+    def test_chapter_sink_shortens_only_the_first_page(self):
+        src = self.build([('c1.xhtml', '<h1>Chapter 1</h1>' + paragraphs(40))])
+
+        def page_sizes(**opts):
+            with core.Book(src) as book:
+                text = book.texts[book.spine[0][0]]
+                offs = [off for _, off in core.paginate(book, core.options(
+                    chars_per_page=1800, chars_per_line=0, **opts))]
+            return [len(re.sub(r'<[^>]+>', '', text[a:b])) for a, b in zip(offs, offs[1:])]
+
+        plain, sunk = page_sizes(), page_sizes(chapter_sink=0.3)
+        self.assertLess(sunk[0], 0.75 * plain[0])
+        self.assertGreater(sunk[0], 0.65 * plain[0])
+        self.assertAlmostEqual(sunk[1], plain[1], delta=40)
+
+    def test_chapter_sink_ignores_headings_inside_a_page(self):
+        # 7 + 35 lines of text fit one 50-line page; a sink of 25 lines at the heading would not
+        body = paragraphs(1) + '<h2>Section</h2>' + paragraphs(5)
+        src = self.build([('c1.xhtml', body)])
+        sunk, _ = self.run_process(src, chars_per_page=3000, chapter_sink=0.5)
+        self.assertEqual(sunk['pages'], 1)
+
     def test_recto_adds_blank_pages(self):
         chapters = [('c%d.xhtml' % n, paragraphs(1, seed=n)) for n in range(1, 4)]
         result, z = self.run_process(self.build(chapters), chars_per_page=5000, recto=True)

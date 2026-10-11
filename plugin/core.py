@@ -72,6 +72,7 @@ DEFAULTS = {
     'first_page': 1,
     'recto': False,             # every spine document starts on an odd page
     'min_last_page': 0.0,       # merge a shorter last page of a section into the previous
+    'chapter_sink': 0.0,        # share of a page taken by the heading that opens a page
     'include_nonlinear': False,
     'force': False,             # replace an existing page-list
 }
@@ -424,6 +425,11 @@ class Paginator:
             self.new_page(idx, offset)
         self.used += self.image_lines
 
+    def sink(self, lines):
+        """The heading area at the top of a page occupies at least this many lines."""
+        if not self.pending:
+            self.used = max(self.used, lines)
+
     def force_break(self, recto=False):
         self.end_block()
         if (not self.pending and len(self.pages) - 1 > self.section_first
@@ -440,12 +446,16 @@ def paginate(book, opts, docs=None, first_number=None):
     pg.first_number = opts.first_page if first_number is None else first_number
     pg.min_last = opts.min_last_page
     break_on = {t.strip().lower() for t in opts.break_on.split(',') if t.strip()}
+    sink_lines = opts.chapter_sink * pg.lpp
+    opening = False     # the headings that open the current page are being read
+    headings = 0        # depth of open heading elements
     for idx, (path, linear) in enumerate(book.spine):
         if docs is not None and idx not in docs:
             continue
         if not linear and not opts.include_nonlinear:
             continue
         pg.force_break(opts.recto and pg.pages)
+        opening, headings = False, 0
         stack = []      # names of open elements that force a break when closed
         skip = None     # name of the skipped element we are inside
         skip_depth = 0
@@ -474,6 +484,10 @@ def paginate(book, opts, docs=None, first_number=None):
                     pg.force_break()
                 elif name in BLOCKS:
                     pg.end_block()
+                if name in HEADING_EXTRA and not selfclose:
+                    if pg.pending and sink_lines:
+                        opening = True
+                    headings += 1
                 if name in ('img', 'image'):
                     pg.image(idx, start)
                 after = css_match(book.break_after, name, attrs) or style_break(attrs, 'after')
@@ -503,6 +517,10 @@ def paginate(book, opts, docs=None, first_number=None):
                         break
                 if name in BLOCKS:
                     pg.end_block(HEADING_EXTRA.get(name, 0))
+                if name in HEADING_EXTRA and headings:
+                    headings -= 1
+                    if opening:
+                        pg.sink(sink_lines)
                 if after:
                     pg.force_break()
             elif kind == 'text' and in_body and not skip:
@@ -515,6 +533,8 @@ def paginate(book, opts, docs=None, first_number=None):
                         n = len(ENTITY_RE.sub('x', tok))
                         if tok in ('&#160;', '&nbsp;') and not pg.chars:
                             continue  # empty-paragraph spacer
+                        if opening and not headings:
+                            opening = False  # body text: the page opening is over
                         pg.word(idx, start + m.start(2), n)
     pg.force_break()
     return pg.pages
@@ -882,6 +902,10 @@ def main():
                     help='a section\'s last page filled less than this share (e.g. 0.25) '
                          'is merged into the previous page, like a typesetter avoids '
                          'stray lines (default 0 = off)')
+    ap.add_argument('--chapter-sink', type=float, default=0,
+                    help='share of a page (e.g. 0.3) taken by a heading that opens a page, '
+                         'with its spacing: the first page of a chapter holds less text '
+                         '(default 0 = only the heading text and a few lines)')
     ap.add_argument('--include-nonlinear', action='store_true',
                     help='also paginate spine items marked linear="no"')
     ap.add_argument('--force', action='store_true', help='replace an existing page-list')

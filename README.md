@@ -74,6 +74,7 @@ What the check results mean:
 | Characters per page | Size of an estimated page, spaces included. Paperback ≈ 1500, trade paperback ≈ 2000, hardcover ≈ 2300–2600. Smaller pages turn more often on Kindle. |
 | Characters per line | Paragraph ends are rounded up to whole lines (default 60); 0 counts plain characters. |
 | Merge a short last page of a chapter | If a chapter's last page would be filled less than this, it is squeezed onto the previous page. On Kindle, fewer page numbers are skipped at chapter ends. |
+| A chapter heading takes at least | Share of a page taken by a heading that opens a page, with the space around it, so the first page of a chapter holds less text. Printed books use about 20–30 %; on a Kindle screen a large heading takes about a third. |
 | Start every chapter on an odd page | Adds a blank page number where a printed book would have a blank left page. |
 | Also start a new page at | Extra HTML tags that start a new page, e.g. `h1, h2`. |
 | Page 1 is at | The start of the main text, found from the book's landmarks or guide, or from the first "Chapter 1" / "Prologue"; or the start of the book. |
@@ -86,7 +87,7 @@ What the check results mean:
 ```bash
 python plugin/core.py book.epub                        # writes "book (pages).epub"
 python plugin/core.py --check *.epub                   # how likely Kindle shows pages
-python plugin/core.py book.epub --chars-per-page 1500 --min-last-page 0.25 --body-start auto
+python plugin/core.py book.epub --chars-per-page 1500 --min-last-page 0.25 --chapter-sink 0.3 --body-start auto
 python plugin/core.py printed.epub --compare --fit     # calibrate on a book with real pages
 ```
 
